@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true"
+          name="C:/Users/OITWASKETEME/IdeaProjects/WebMail_DSM_Automation/src/test/java/com/va/dsm/testcases/RegressionTestSuite.java">
+        <classes>
+            <class name="com.va.dsm.testcases.RegressionTestSuite">
+                <methods>
+                    <include name="Test001_DSM_Email_Compose_No_Attachment"/>
+                    <include name="Test002_DSM_Email_Compose_With_Attachment"/>
+                    <include name="Test003_DSM_Email_Compose_With_CCD_Attachment"/>
+                    <include name="Test004_DSM_Email_Create_Folder"/>
+                    <include name="Test005_DSM_Email_Drafts_Archive_Discard"/>
+                    <include name="Test006_DSM_Email_Archive_Functionalities"/>
+                    <include name="Test007_DSM_Email_Outbox"/>
+                    <include name="Test008_DSM_Email_Inbox"/>
+                    <include name="Test009_DSM_Email_Sent"/>
+                    <include name="Test010_DSM_Email_AccountSettings"/>
+                    <include name="Test011_DSM_Email_NotificationSettings"/>
+                    <include name="Test012_DSM_Email_ApplicationSettings"/>
+                    <include name="Test013_DSM_Email_AutomaticReplies"/>
+                    <include name="Test014_DSM_Email_Feedback"/>
+                    <include name="Test015_DSM_Email_Reports"/>
+                    <include name="Test016_DSM_Email_Directory_Search_NonVA_Addresses"/>
+                    <include name="Test016_DSM_Email_Directory_Search_InternalVA_Addresses"/>
+                    <include name="Test016_DSM_Email_Directory_Search_Personal_Contacts"/>
+                    <include name="Test017_DSM_Email_Admin_Reports"/>
+                    <include name="Test017_DSM_Email_Admin_Logs"/>
+                    <include name="Test018_DSM_Email_Admin_Manage_Users"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
