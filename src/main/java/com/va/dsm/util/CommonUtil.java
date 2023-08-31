@@ -1,6 +1,12 @@
 package com.va.dsm.util;
 
-import java.awt.Toolkit;
+import org.openqa.selenium.*;
+import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.FluentWait;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.awt.*;
 import java.awt.datatransfer.StringSelection;
 import java.io.File;
 import java.io.FileInputStream;
@@ -10,29 +16,13 @@ import java.time.Duration;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Properties;
-import java.util.concurrent.TimeUnit;
-import java.util.stream.Collectors;
-
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.NoAlertPresentException;
-import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedCondition;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.FluentWait;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class CommonUtil extends LoadDriver {
 	public static JavascriptExecutor js = (JavascriptExecutor) driver;
-
 	public CommonUtil(WebDriver driver) {
 		PageFactory.initElements(driver, this);
 
 	}
-
 	// Check if element is present or not in webpage
 	public static boolean isDisplayed(WebElement element) {
 		try {
@@ -41,7 +31,6 @@ public class CommonUtil extends LoadDriver {
 			return false;
 		}
 	}
-
 	// Compare values between excel and form
 	public static boolean compareExcelAndForm(String excelValues, String formValues) {
 		Boolean compare = false;
@@ -80,7 +69,6 @@ public class CommonUtil extends LoadDriver {
 			return false;
 		}
 	}
-
 	/*
 	 * private void clickWaitForPopoUp(WebDriver driver, By by,int waitTime) { final
 	 * int currentWindows = driver.getWindowHandles().size();
@@ -94,21 +82,20 @@ public class CommonUtil extends LoadDriver {
 	     WebElement element=new WebDriverWait(driver,timeout).until(ExpectedConditions.presenceOfElementLocated(locator));
 	     return element;
 	 }
-	@SuppressWarnings("deprecation")
+
 	public static void waitforelementToBeVisible(String element) throws Exception {
 		/*FluentWait<WebDriver> wait = new FluentWait<WebDriver>(driver).withTimeout(2000, TimeUnit.SECONDS).pollingEvery(10000, TimeUnit.MILLISECONDS);*/
 		FluentWait<WebDriver> wait = new FluentWait<WebDriver>(driver).withTimeout(Duration.ofSeconds(5)).pollingEvery(Duration.ofSeconds(5));
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id(element)));
 	}
 	
-	@SuppressWarnings("deprecation")
+
 	public static void waitforelementToBeClickable(WebElement element) throws Exception {
 		//FluentWait<WebDriver> wait = new FluentWait<WebDriver>(driver).withTimeout(200000, TimeUnit.SECONDS).pollingEvery(100000, TimeUnit.MILLISECONDS);
 		FluentWait<WebDriver> wait = new FluentWait<WebDriver>(driver).withTimeout(Duration.ofSeconds(5)).pollingEvery(Duration.ofSeconds(5));
 		wait.until(ExpectedConditions.elementToBeClickable(element));
 	}
 
-	@SuppressWarnings("deprecation")
 	public static void waitToVerifyPageTitle(String element) throws Exception {
 		//FluentWait<WebDriver> wait = new FluentWait<WebDriver>(driver).withTimeout(1000, TimeUnit.SECONDS).pollingEvery(500, TimeUnit.MILLISECONDS);
 		FluentWait<WebDriver> wait = new FluentWait<WebDriver>(driver).withTimeout(Duration.ofSeconds(5)).pollingEvery(Duration.ofSeconds(5));

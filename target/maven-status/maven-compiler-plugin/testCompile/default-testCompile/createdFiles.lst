@@ -1,0 +1,3 @@
+com\va\dsm\testcases\RegressionTestSuite.class
+com\va\dsm\main\DSMTestRunner.class
+com\va\dsm\testcases\DsmE2ESuiteRunnerTest.class
